@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+    <script src="script.js" ></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css">
@@ -31,7 +32,7 @@
                         </div>
                     </div>
                 </div>
-                </div>
+            </div>
         </div>
         <div class="col-lg-6 col-md-6 col-sm-12">
             <div class="content">
@@ -43,15 +44,27 @@
                     <p><span id="originalPrice" class="discount">$19999.00</span></p>
                 </div>
                 <hr>
-                <div class="container">
+                <div class="color-container">
                     <div class="row">
-                    <p>Choose a Color</p>
-                    <div class="card" style="margin:.2em .5em;background-color:peachpuff;width:50px;height:50px;"></div>
-                    <div class="card" style="margin:.2em .5em;background-color:rgb(180, 247, 180);width:50px;height:50px;"></div>
-                    <div class="card" style="margin:.2em .5em;background-color:rgb(100, 255, 255);width:50px;height:50px;"></div>
-                    <div class="card" style="margin:.2em .5em;background-color:pink;width:50px;height:50px;"></div>
+                      <p>Choose a Color</p>
+                
+                      <div class="card card1" onclick="selectCard(this)">
+                        <div class="tick">&#10003;</div>
+                      </div>
+                
+                      <div class="card card2" onclick="selectCard(this)">
+                        <div class="tick">&#10003;</div>
+                      </div>
+                
+                      <div class="card card3" onclick="selectCard(this)">
+                        <div class="tick">&#10003;</div>
+                      </div>
+                
+                      <div class="card card4" onclick="selectCard(this)">
+                        <div class="tick">&#10003;</div>
+                      </div>
                     </div>
-                </div>
+                  </div>
                 <hr>
                 <div class="container">
                     <div class="row">
@@ -66,10 +79,23 @@
                         <label class="radioBtn"><input type="radio" name="sizes" value="xxl"> XXL</label>
                         </div>
                     </div>
-                    <div class="row">
-                        <h3 class="quantity">&plus; 1 &minus;</h3>
-                        <!-- <input type="number" min="1" value="quantity"> -->
-                        <a href="#"><i class="fa fa-shopping-cart"></i>Add to Cart</a>
+                    <div class="row" id="btnrow">
+                        <!--<h3 class="quantity">&plus; 1 &minus;</h3
+                        
+                        <!-- <input type="number" min="1" value="quantity">
+                        <a href="#"><i class="fa fa-shopping-cart"></i>Add to Cart</a>-->
+                        <div id="cart-container">
+    
+                            <div id="quantity-container">
+                              <div id="decrease" onclick="changeQuantity(-1)">-</div>
+                              <div id="quantity">1</div>
+                              <div id="increase" onclick="changeQuantity(1)">+</div>
+                            </div>
+                            <div><h1>&nbsp;&nbsp;</h1></div>
+                            <button id="add-to-cart" onclick="addToCart()">Add to Cart</button>
+                        </div>
+                        
+                          <div id="message-container"> Embrace Sideboard added to cart </div>
                     </div>
                 </div>
                 <hr>
@@ -94,5 +120,4 @@
     <!-- Happy codign 😊 -->
     <!-- <script src="./script.js"></script> -->
 </body>
-
 </html>
